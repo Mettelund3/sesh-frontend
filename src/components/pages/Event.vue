@@ -62,10 +62,8 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
 <template>
 
   <div class="darkframe">
-    <div class="logo">
-      <img class="banner" src="../../assets/test.png" alt="">
-      <h1>Events</h1>
-      
+    <div class="">
+      <img class="banner" src="../../assets/bannerheader2.png" alt="">  
     </div>
     
     <div class="event_calender_list">
@@ -164,11 +162,13 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
 
 .event_img {
   flex: 0 1 auto;
+  
 }
 
 .img_list {
-  max-width: 100%;
+  width: 300px;
   height: auto;
+  
 }
 
 
@@ -227,18 +227,15 @@ h3 {
   font-size: 1em;
 }
 
-.logo {
-  background-image: url('../../assets/logo.svg');
-  background-size:;
-  background-repeat: no-repeat;
-  z-index: 2;
-  
-}
+
 
 .banner {
-max-width: 100%;
-z-index: 1;
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 5%;
 }
+
 
 /* buttons */
 
