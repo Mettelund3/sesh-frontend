@@ -60,31 +60,27 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
 </script>
 
 <template>
-    <nav>
-      <ul>
-        <li>Forside</li>
-        <li>Skateskole</li>
-        <li>Om Sesh</li>
-        <li>Tilmelding</li>
-        <li>Events</li>
-      </ul>
-    </nav>
-    <div class="darkframe">
-    
+
+  <div class="darkframe">
+    <div class="logo">
+      <img class="banner" src="../../assets/test.png" alt="">
+      <h1>Events</h1>
       
+    </div>
     
-      <div class="event_calender_list">
-        <div class="list_head">
-           <div>
-             <button id="arrow-left"></button>
-             <button id="arrow-right"></button>
-          </div>
-          <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+    <div class="event_calender_list">
+      <div class="list_head">
+        <div>
+          <button id="arrow-left"></button>
+          <button id="arrow-right"></button>
+        </div>
+        <button @click="showForm = true" class="btn_addevent">Opret Event</button>
         </div>
         <div class="month_layout">
-        <h2 class="h2month">April 2023</h2>
-        <hr class="line">
+          <h2 class="h2month">April 2023</h2>
+          <hr class="line">
         </div>
+      </div>
         <div class="event_calender_row" v-for="event in events" :key="event.id">
           <div class="event_calender_item">
             <div class="event_calender_date_tag">
@@ -100,51 +96,32 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
                 <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
               </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-      <teleport to="body">
-        <div v-if="showForm">
-              <OpretForm />
-        </div>
-      </teleport>
+  </div>
+      
     
-      <div>
-        <SeshFooter/>
+    <teleport to="body">
+      <div v-if="showForm">
+        <OpretForm />
       </div>
-    </template>
+    </teleport>
+    
+    <div><SeshFooter/></div>
+</template>
 <style scoped>
 
 
 /* nav*/
 
-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 2em;
-}
-ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  
-}
 
-li {
-  margin: 0 1em;
-  
-}
 
 
 /* layout*/
 .darkframe {
   max-width: fit-content;
   background-color: black;
+  padding: 1em;
 }
 
 
@@ -208,6 +185,7 @@ li {
 
 .h2month {
   margin-right: 10px;
+  color:white;
 }
 
 .line {
@@ -218,6 +196,10 @@ li {
 }
 
 /* styling */
+h1 {
+  color: white;
+}
+
 h3 {
   color: black;
   font-size: 1.5em;
@@ -245,6 +227,19 @@ h3 {
   font-size: 1em;
 }
 
+.logo {
+  background-image: url('../../assets/logo.svg');
+  background-size:;
+  background-repeat: no-repeat;
+  z-index: 2;
+  
+}
+
+.banner {
+max-width: 100%;
+z-index: 1;
+}
+
 /* buttons */
 
 #arrow-left {
@@ -253,6 +248,8 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   padding: 1em;
+  border: none;
+  
 }
 
 #arrow-right {
@@ -261,12 +258,17 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
   padding: 1em;
+  border: none;
+  margin-left: 10px;
 }
 .btn_addevent {
   height: 35px;
   width: 100px; 
-  background-color: #CC3333;
+  background-image: url('../../assets/sesh-knap.png');
   color: rgb(255, 255, 255);
+  border: none;
   
 }
+
+
 </style>
