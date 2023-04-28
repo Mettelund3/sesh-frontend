@@ -11,8 +11,8 @@ const title = ref('');
 const date = ref('');
 const location = ref('');
 const content = ref('');
-const username = ref('');
-const password = ref('');
+const username = ref('admin');
+const password = ref('admin');
 
 const onCreatePost = () => {
   // The fields send, to create post
@@ -35,7 +35,7 @@ const onCreatePost = () => {
       // Tells the server, that it can expect JSON
       'Content-Type': 'application/json',
       // Send the username and password to the server
-      'Authorization': `Basic YWRtaW46YWRtaW4=`
+      'Authorization': encodedUser
     },
     // This is the body of the server request e.i. the fields sent along
     body: JSON.stringify(body),
@@ -61,6 +61,11 @@ function handleClick() {
   inputFile.value.click();
 }
 
+function handleClose() {
+  const formOverlay = document.getElementById('form-overlay');
+  formOverlay.style.display = 'none';
+}
+
 onMounted(() => {
   inputFile.value.addEventListener('change', handleFileSelect);
 });
@@ -68,7 +73,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="form-overlay">
+  <div class="form-overlay" id="form-overlay">
     <div class="form_container" id="form-container">
 
       <form @submit.prevent="onCreatePost">
@@ -142,7 +147,7 @@ onMounted(() => {
 
           <div class="formknapper">
             <button class="createpostknap" type="submit">Opret Event</button>
-            <button class="annullerknap" type="button">Annullér</button>
+            <button class="annullerknap" type="button" @click="handleClose">Annullér</button>
           </div>
       </form>
     </div>
@@ -205,7 +210,7 @@ button.createpostknap, .annullerknap {
 
 
 .form-overlay button:hover {
-  background-color: #CC3333;
+  background-color: #961b1b;
 }
 
 #title {
