@@ -31,11 +31,14 @@ $fontsizeBigTitle: 2.500em;
 
   font-family: 'BaskerRegularPara';
   src: local('BaskerRegularPara') url(./fonts/BaskervilleMTStd-Regular.ttf) 
-  format("truetype"); 
+  format("truetype");
+  
 
   font-family: 'BaskerSemibPara';
   src: local('BaskerSemibPara') url(./fonts/BaskervilleMTStd-Semibold.ttf) 
-  format("truetype"); 
+  format("truetype");
+  
+  
 
   font-family: 'BaskerBold';
   src: local('BaskerBold') url(./fonts/BaskervilleMTStd-Bold.ttf) 
