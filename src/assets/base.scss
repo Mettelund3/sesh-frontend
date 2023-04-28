@@ -26,7 +26,19 @@ $fontsizeBigTitle: 2.500em;
   format("truetype"); 
 
   font-family: 'AvenirSmallH';
-  src: local('AvenirMediumH') url(./fonts/AvenirLTStd-Medium.ttf) 
+  src: local('AvenirSmallH') url(./fonts/AvenirLTStd-Light.ttf) 
+  format("truetype"); 
+
+  font-family: 'BaskerRegularPara';
+  src: local('BaskerRegularPara') url(./fonts/BaskervilleMTStd-Regular.ttf) 
+  format("truetype"); 
+
+  font-family: 'BaskerSemibPara';
+  src: local('BaskerSemibPara') url(./fonts/BaskervilleMTStd-Semibold.ttf) 
+  format("truetype"); 
+
+  font-family: 'BaskerBold';
+  src: local('BaskerBold') url(./fonts/BaskervilleMTStd-Bold.ttf) 
   format("truetype"); 
 
 }
@@ -45,7 +57,8 @@ body {
   background: var($blackBackGround);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: 'AvenirH', 'AvenirMediumH', 'AvenirSmallH'  sans-serif;
+  font-family: 'AvenirH' sans-serif, 'AvenirMediumH' sans-serif, 'AvenirSmallH' sans-serif, 
+  'BaskerRegularPara', 'BaskerSemibPara', 'BaskerBold';
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

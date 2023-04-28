@@ -226,6 +226,7 @@ h3 {
 .event_ex {
   color: black;
   font-size: 1em;
+  font-family: 'BaskerSemibPara';
 }
 
 
