@@ -78,22 +78,31 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
         <hr class="line">
       </div>
     </div>
-    <div class="event_calender_row" v-for="event in events" :key="event.id">
-      <div class="event_calender_item">
-        <div class="event_calender_date_tag">
-          <p class="date_style" v-if="event">{{ event.plainDate }}</p>
-        </div>
-        <div class="event_calender_content">
-          <div class="event_detail">
-            <p class="event_loc">{{ event.eventLocation }}</p>
-            <h3>{{ event.title.rendered }}</h3>
-            <p class="event_ex">{{ getPlainText(event.excerpt.rendered) }}</p>
+    <div class="list_sidebar_wrap">
+
+      <div class="event_calender_row" v-for="event in events" :key="event.id">
+        <div class="event_calender_item">
+          <div class="event_calender_date_tag">
+            <p class="date_style" v-if="event">{{ event.plainDate }}</p>
           </div>
-          <div class="event_img">
-            <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
+          <div class="event_calender_content">
+            <div class="event_detail">
+              <p class="event_loc">{{ event.eventLocation }}</p>
+              <h3>{{ event.title.rendered }}</h3>
+              <p class="event_ex">{{ getPlainText(event.excerpt.rendered) }}</p>
+            </div>
+            <div class="event_img">
+              <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
+            </div>
           </div>
         </div>
-    </div>
+      </div>
+
+      <div class="sidebar">
+        <img />
+        <h3 style="color:white">title</h3>
+        <p style="color:white">date</p>
+      </div>
     </div>
   </div>
 
@@ -111,9 +120,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
 
 <style scoped>
 
-@import "../../assets/main.scss";
-@import "../../assets/_event.scss";
-@import "../../assets/_base.scss";
+
 
 
 </style>

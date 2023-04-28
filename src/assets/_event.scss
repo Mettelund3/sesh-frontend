@@ -25,6 +25,7 @@
   
   .event_calender_item {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     margin: 1rem 1rem 1rem 1rem;
     background-color: rgb(0, 0, 0);
@@ -54,12 +55,13 @@
   }
   
   .img_list {
-    width:100%;
+    width:300px;
     height: auto;
   
   }
   
   
+
 
   .list_head {
     display: flex;
@@ -81,6 +83,21 @@
     height: 1px;
     background-color: black;
     margin-left: 10px;
+  }
+
+
+.list_sidebar_wrap {
+    
+}
+
+
+  /*sidebar*/
+
+  .sidebar {
+    width: 300px;
+    height: auto;
+    border-style: dashed;
+    border-color: rgb(211, 34, 34);
   }
   
   /* styling */
@@ -132,7 +149,7 @@
   /* buttons */
   
   #arrow-left {
-    background-image: url('../../assets/arrowleft.svg');
+    background-image: url('../../src/assets/arrowleft.svg');
     background-color: black;
     background-size: contain;
     background-repeat: no-repeat;
@@ -142,7 +159,7 @@
   }
   
   #arrow-right {
-    background-image: url('../../assets/right-arrow.svg');
+    background-image: url('../../src/assets/right-arrow.svg');
     background-color: black;
     background-size: contain;
     background-repeat: no-repeat;
