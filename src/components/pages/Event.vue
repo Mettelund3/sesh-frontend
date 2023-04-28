@@ -204,6 +204,7 @@ h3 {
   color: black;
   font-size: 1.5em;
   font-weight: 600;
+  font-family: 'AvenirH' Avenir;
 }
 
 .date_style {

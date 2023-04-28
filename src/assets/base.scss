@@ -12,6 +12,25 @@ $fontsizeBigTitle: 2.500em;
 
 /*mobile sizes*/
 
+
+
+/* fonts */
+
+@font-face {
+  font-family: 'AvenirH';
+  src: local('AvenirH') url(./fonts/AvenirLTStd-Heavy.ttf) 
+  format("truetype"); 
+
+  font-family: 'AvenirMediumH';
+  src: local('AvenirMediumH') url(./fonts/AvenirLTStd-Medium.ttf) 
+  format("truetype"); 
+
+  font-family: 'AvenirSmallH';
+  src: local('AvenirMediumH') url(./fonts/AvenirLTStd-Medium.ttf) 
+  format("truetype"); 
+
+}
+
 *,
 *::before,
 *::after {
@@ -26,8 +45,7 @@ body {
   background: var($blackBackGround);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'AvenirH', 'AvenirMediumH', 'AvenirSmallH'  sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
