@@ -138,7 +138,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
 
 .layout {
   width: 100%;
-  height: 768px;
+  height: auto;
   background-color: black;
   display: grid;
   grid:
@@ -168,6 +168,11 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     background-color: rgb(0, 0, 0);
     border-style: dashed;
     border-color: bisque;
+    margin: 1em;
+    clear: both;
+    width: auto;
+   
+    
 }
 .footer { 
     grid-area: footer; 

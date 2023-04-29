@@ -5,25 +5,18 @@
 
 /* layout*/
 .darkframe {
-    
+    max-width: fit-content;
     background-color: black;
     padding: 1em;
   }
   
-  
-  
-  
-  
-  
   /* liste calender*/
   
   .event_calender_row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: 1em;
+    max-width: 100%;
+    overflow-x: auto;
   }
-  
-  
+   
   .event_calender_item {
     display: flex;
     flex-wrap: nowrap;
@@ -45,7 +38,9 @@
   
   .event_detail {
     flex: 1 1 auto;
-    margin-right: 2rem;
+    flex-shrink: 1;
+    height: auto;
+    margin-right: 1rem;
     padding: 1rem;
     background-color: white;
   }
@@ -58,12 +53,8 @@
   .img_list {
     width:300px;
     height: auto;
-  
   }
   
-  
-
-
   .list_head {
     display: flex;
     justify-content: space-between;
@@ -86,16 +77,9 @@
     margin-left: 10px;
   }
 
-
-.list_sidebar_wrap {
-    
-}
-
-
   /*sidebar*/
 
   .sidebar {
-    width: 300px;
     height: auto;
     
   }
@@ -135,8 +119,6 @@
     font-family: 'BaskerSemibPara', serif;
     
   }
-  
-  
   
   .banner {
     max-width: 100%;
