@@ -44,6 +44,7 @@
   background: transparent;
 }
 .search button {
+
     border: 0;
     padding: 0;
     cursor: pointer;
