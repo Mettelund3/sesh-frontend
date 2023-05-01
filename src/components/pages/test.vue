@@ -66,30 +66,33 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
         <div class="darkframe">
             <div class="">
                 <img class="banner" src="../../assets/bannerheader1.png" alt="">
-            </div>
-
-            <SearchSection/>
-
-            <div class="event_calender_list">
-                <div class="list_head">
-                    <div>
-                        <button id="arrow-left"></button>
-                        <button id="arrow-right"></button>
-                    </div>
-                    <button @click="showForm = true" class="btn_addevent">Opret Event</button>
-                </div>
-            </div>
-            <div class="month_layout">
-                <h2 class="h2month">April 2023</h2>
-                <hr class="line">
-            </div>
-            
+            </div>            
         </div>
     </div>
     
 
     <div class="bodygrid list_wrap">2
+      <div class="salami">
+        <SearchSection/>
+
+        <div class="event_calender_list">
+            <div class="list_head">
+                <div>
+                    <button id="arrow-left"></button>
+                    <button id="arrow-right"></button>
+                </div>
+                <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+            </div>
+        </div>
+        <div class="month_layout">
+            <h2 class="h2month">April 2023</h2>
+            <hr class="line">
+        </div>
+      </div>
         <div class="event_calender_row" v-for="event in events" :key="event.id">
+
+          
+
         <div class="event_calender_item">
           <div class="event_calender_date_tag">
             <p class="date_style" v-if="event">{{ event.plainDate }}</p>
@@ -175,9 +178,11 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     border-color: bisque;
     margin: 1em;
     clear: both;
-    width: auto;
-   
-    
+    width: auto;   
+}
+
+.salami {
+  margin: 1em;
 }
 .footer { 
     grid-area: footer; 
