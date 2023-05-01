@@ -83,8 +83,10 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
                 <h2 class="h2month">April 2023</h2>
                 <hr class="line">
             </div>
+            
         </div>
     </div>
+    
 
     <div class="bodygrid list_wrap">2
         <div class="event_calender_row" v-for="event in events" :key="event.id">
