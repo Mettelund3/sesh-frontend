@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import SeshFooter from '@/components/pages/SeshFooter.vue';
 import OpretForm from '@/components/pages/OpretForm.vue';
+import SearchSection from '../SearchSection.vue';
 
 const events = ref([]);
 const showForm = ref(false);
@@ -66,6 +67,8 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
             <div class="">
                 <img class="banner" src="../../assets/bannerheader1.png" alt="">
             </div>
+
+            <SearchSection/>
 
             <div class="event_calender_list">
                 <div class="list_head">
