@@ -23,7 +23,7 @@
 }
 .search {
   width: auto;
-  height: 35px;
+  height: 37px;
   margin: 25px 0 25px 0;
   background: #444;
   background: rgba(0, 0, 0, 0.2);
@@ -86,7 +86,7 @@
 
 .btn_toggle:focus,
 .btn_toggle:hover {
-  color: #fff;
+  color:#CC3333;
 }
 
 
@@ -104,7 +104,7 @@
   position: absolute;
   width: 0%;
   height: 2px;
-  background-color: #fff;
+  background-color: #CC3333;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: width, left;
