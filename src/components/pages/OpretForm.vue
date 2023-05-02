@@ -28,16 +28,11 @@ const onCreatePost = () => {
 
   // Send the POST request to the server
   fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
-    // The method have to be the type of post, so the server knows we create a new post
     method: 'post',
-    // Headers sent along the post
     headers: {
-      // Tells the server, that it can expect JSON
       'Content-Type': 'application/json',
-      // Send the username and password to the server
       'Authorization': encodedUser
     },
-    // This is the body of the server request e.i. the fields sent along
     body: JSON.stringify(body),
   })
     // Success response
