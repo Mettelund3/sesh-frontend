@@ -114,7 +114,8 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
           <div class="event_calender_date_tag">
             <p class="date_style" v-if="event">{{ event.plainDate }}</p>
           </div>
-          <router-link class="edlink" to="/EventDetaljer"><div class="event_calender_content">
+          <router-link class="edlink" to="/EventDetaljer">
+            <div class="event_calender_content">
             <div class="event_detail">
               <p class="event_loc">{{ event.eventLocation }}</p>
               <h3>{{ event.title.rendered }}</h3>

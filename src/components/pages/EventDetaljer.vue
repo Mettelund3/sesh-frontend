@@ -24,7 +24,7 @@
             <h4 class="edh4">Pris</h4>
             <p>Gratis</p>
         </div>
-        <button class="edknap" id="edpil">Tilbage</button>
+        <router-link class="edlink" to="/Event"><button class="edknap" id="edpil">Tilbage</button></router-link>
     </section>
 </template>
 
