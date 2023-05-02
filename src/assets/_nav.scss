@@ -1,34 +1,4 @@
-
-
-#nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2em;
-  }
-
-  .list-link {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .nav-link {
-    margin: 0 2em;
-    text-decoration: none;
-    color: #333;
-    text-transform: capitalize;
-  }
-
-  .nav-link:hover {
-    color: #000;
-  }
-
-
-/* sccs not working.....
+@import './_base.scss';
 
 #nav {
     display: flex;
@@ -47,15 +17,15 @@
         .nav-link {
             margin: 0 2em;
             text-decoration: none;
+            font-family: 'AvenirH';
+            text-transform: uppercase;
             color: #333;
-            font-weight: bold;
+            font-weight: 300;
 
             .nav-link:hover {
-                color: #000;
+                color: #88f8;
             }
 
         }
     }
 }
-
-*/

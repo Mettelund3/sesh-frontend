@@ -1,0 +1,53 @@
+.darkframe {
+    max-width: fit-content;
+    background-color: black;
+    padding: em;
+  }
+
+.banner {
+    width: 100%;
+}
+
+.edtitelbg {
+    background-color: #CC3333;
+    max-width: 650px;
+    padding: 1rem;
+    margin: 5% 0 1rem 5%;
+}
+.edtitel {
+    color: white;
+}
+.eddato {
+    color: white;
+}
+.edbanner {
+    margin-left: 5%;
+    width: 650px;
+    height: 400px;
+}
+
+.edbox {
+    background-color: white;
+    padding: 1.5rem;
+    margin: 1rem 0 1rem 5%;
+    max-width: 650px;
+    .edh4 {
+        color: black;
+        font-weight:bold;
+        margin-top: 1rem;
+    }
+}
+
+.edknap {
+    height: 35px;
+    width: 100px;
+    background-color: #CC3333;
+    color: rgb(255, 255, 255);
+    border: none;
+    margin: 1rem 0 1rem 5%;
+    cursor: pointer;
+}
+.edknap:hover {
+    background-color: #961b1b;
+}
+
