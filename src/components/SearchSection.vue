@@ -44,16 +44,13 @@
   background: transparent;
 }
 .search .search_btn {
-
     border: 1;
-    padding: ;
     cursor: pointer;
     height: 35px;
     width: 100px;
     color: #fff;
     background-color: #CC3333;
-    border-left: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+    
 }
 .search .search_btn:hover {
   background: #fff;
@@ -73,7 +70,6 @@
   margin-left: 10%;
 
   font-family: inherit;
-  font-weight: 800;
   cursor: pointer;
   position: relative;
   border: none;
