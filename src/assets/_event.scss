@@ -103,10 +103,7 @@
 
 }
 
-.sidebar_wrap {
-  
-  
-}
+
 
 
 /* styling */
@@ -177,6 +174,7 @@ h4 {
   background-color: black;
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
   padding: 1em;
   border: none;
 
@@ -187,9 +185,18 @@ h4 {
   background-color: black;
   background-size: contain;
   background-repeat: no-repeat;
+  cursor: pointer;
   padding: 1em;
   border: none;
   margin-left: 10px;
+
+}
+
+#arrow-right:hover,
+#arrow-left:hover {
+
+  background-color: #CC3333;
+
 }
 
 .btn_addevent {
