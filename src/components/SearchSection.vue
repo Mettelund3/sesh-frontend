@@ -26,7 +26,7 @@
   height: 37px;
   margin: 25px 0 25px 0;
   background: #444;
-  background: rgba(0, 0, 0, 0.2);
+  background: white;
   border-radius: 3px;
   border: 1px solid #fff;
 }
@@ -45,8 +45,8 @@
 }
 .search .search_btn {
 
-    border: 0;
-    padding: 0;
+    border: 1;
+    padding: ;
     cursor: pointer;
     height: 35px;
     width: 100px;
