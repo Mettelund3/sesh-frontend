@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import SeshFooter from '../pages/SeshFooter.vue';
 import OpretForm from '../pages/OpretForm.vue';
 import SearchSection from '../SearchSection.vue';
@@ -17,7 +17,6 @@ const getPlainText = (content) => {
   return noHtmlText;
 };
 
-
 const getPlainDate = (dateString) => {
   const year = dateString.substring(0, 4);
   const monthNumber = parseInt(dateString.substring(4, 6)) - 1;
@@ -32,7 +31,7 @@ const getPlainDate = (dateString) => {
 
   const monthName = monthNames[monthNumber];
 
-  return `${day} ${monthName}`;
+  return `${day} ${monthName} ${year}`;
 };
 
 const getFeaturedImageUrl = (event) => {
@@ -45,7 +44,27 @@ const getFeaturedImageUrl = (event) => {
   }
 };
 
+const getMonthName = (date) => {
+  const months = [
+    "Januar", "Februar", "Marts", "April", "Maj", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "December"
+  ];
+  const monthIndex = date.getMonth();
+  return months[monthIndex];
+};
 
+const currentDate = new Date();
+const currentMonth = ref('');
+currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear();
+
+const changeMonth = (direction) => {
+  currentDate.setMonth(currentDate.getMonth() + direction);
+  currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear();
+};
+
+onMounted(() => {
+  currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear();
+});
 
 fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
   .then(response => response.json())
@@ -53,11 +72,12 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     events.value = data.map(event => {
       const plainDate = getPlainDate(event.acf.event_date);
       const plainText = getPlainText(event.content.rendered);
-      return { ...event, plainText, plainDate, eventLocation: event.acf.location };
+      return { ...event, plainText, plainDate, eventLocation: event.acf.location,currentMonth };
     });
   });
-
 </script>
+
+
 
 
 <template>
@@ -75,14 +95,14 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
         <div class="event_calender_list">
             <div class="list_head">
                 <div>
-                    <button id="arrow-left"></button>
-                    <button id="arrow-right"></button>
+                    <button id="arrow-left" @click="changeMonth(-1)"></button>
+                    <button id="arrow-right" @click="changeMonth(1)"></button>
                 </div>
                 <button @click="showForm = true" class="btn_addevent">Opret Event</button>
             </div>
         </div>
         <div class="month_layout">
-            <h2 class="h2month">APRIL 2023</h2>
+            <h2 class="h2month">{{ currentMonth }}</h2>
             <hr class="line">
         </div>
       </div>
