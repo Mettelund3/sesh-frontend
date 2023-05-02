@@ -44,6 +44,7 @@
   background: transparent;
 }
 .search .search_btn {
+    font-family: 'AvenirH';
     border: 1;
     cursor: pointer;
     height: 35px;
@@ -64,18 +65,17 @@
 }
 
 .btn_toggle {
-
-  font-size: 18px;
+  height: 35px;
+  width: 100px;
+  font-size: 15px;
   color: #e1e1e1;
   background-color: #CC3333;
   margin-left: 10%;
-
   font-family: inherit;
   cursor: pointer;
   position: relative;
   border: 1;
-
-  text-transform: uppercase;
+  font-family: 'AvenirH'; 
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
@@ -83,7 +83,7 @@
 
 .btn_toggle:focus,
 .btn_toggle:hover {
-  color:#CC3333;
+  color:black;
 }
 
 
