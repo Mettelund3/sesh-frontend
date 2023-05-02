@@ -64,6 +64,7 @@
 }
 
 .btn_toggle {
+
   font-size: 18px;
   color: #e1e1e1;
   background-color: #CC3333;
@@ -72,8 +73,8 @@
   font-family: inherit;
   cursor: pointer;
   position: relative;
-  border: none;
-  background: none;
+  border: 1;
+
   text-transform: uppercase;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
