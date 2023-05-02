@@ -2,9 +2,6 @@
 </script>
 
 <template>
-
-
-
 <nav id="nav">
     <ul class="list-link">
         <router-link class="nav-link" to="/">Forside</router-link>
