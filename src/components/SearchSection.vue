@@ -44,18 +44,19 @@
   background: transparent;
 }
 .search .search_btn {
-    font-family: 'AvenirH';
-    border: 1;
-    cursor: pointer;
-    height: 35px;
-    width: 100px;
-    color: #fff;
+    font-family: 'AvenirMediumH' sans-serif;
     background-color: #CC3333;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    
     
 }
 .search .search_btn:hover {
-  background: #fff;
-  color: #444;
+  background-color: #961b1b;
 }
 .search .search_btn:active {
   box-shadow: 0px 0px 12px 0px #e1e1e1;
@@ -65,45 +66,24 @@
 }
 
 .btn_toggle {
-  height: 35px;
-  width: 100px;
-  font-size: 15px;
-  color: #e1e1e1;
+  font-family: 'AvenirMediumH' sans-serif;
   background-color: #CC3333;
-  margin-left: 10%;
-  font-family: inherit;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
   cursor: pointer;
-  position: relative;
-  border: 1;
-  font-family: 'AvenirH'; 
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: color;
+  width: 100px;
+  margin-left: 10%;
 }
 
 .btn_toggle:focus,
 .btn_toggle:hover {
-  color:black;
+  background-color: #961b1b;
 }
 
 
-.btn_toggle:focus:after,
-.btn_toggle:hover:after {
-  width: 100%;
-  left: 0%;
-}
 
 .btn_toggle:after {
-  content: "";
-  pointer-events: none;
-  bottom: -2px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #CC3333;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
+text-decoration: underline  ;
 }
 </style>
