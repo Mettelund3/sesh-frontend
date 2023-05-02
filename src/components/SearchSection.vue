@@ -3,9 +3,9 @@
 <form class="search" action="">
   <input type="search" placeholder="Search here..." required>
     <div class="btn_wrap">
-        <button type="submit">Search</button>
-        <button> Liste </button>
-        <button> Måned</button>
+        <button type="submit" class="search_btn">Search</button>
+        <button class="btn_toggle"> Liste </button>
+        <button class="btn_toggle"> Måned</button>
     </div>
 </form>
 
@@ -23,10 +23,10 @@
 }
 .search {
   width: auto;
-  height: 40px;
+  height: 37px;
   margin: 25px 0 25px 0;
   background: #444;
-  background: rgba(0, 0, 0, 0.2);
+  background: white;
   border-radius: 3px;
   border: 1px solid #fff;
 }
@@ -43,27 +43,47 @@
   outline: 0;
   background: transparent;
 }
-.search button {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    height: 35px;
-    width: 100px;
-    margin-left:10%;
-    color: #fff;
+.search .search_btn {
+    font-family: 'AvenirMediumH' sans-serif;
     background-color: #CC3333;
-    border-left: 1px solid #fff;
-    border-radius: 0 3px 3px 0;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: 35px;
+    
+    
 }
-.search button:hover {
-  background: #fff;
-  color: #444;
+.search .search_btn:hover {
+  background-color: #961b1b;
 }
-.search button:active {
+.search .search_btn:active {
   box-shadow: 0px 0px 12px 0px #e1e1e1;
 }
-.search button:focus {
+.search .search_btn:focus {
   outline: 0;
 }
 
+.btn_toggle {
+  font-family: 'AvenirMediumH' sans-serif;
+  background-color: #CC3333;
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 10%;
+}
+
+.btn_toggle:focus,
+.btn_toggle:hover {
+  background-color: #961b1b;
+}
+
+
+
+.btn_toggle:after {
+text-decoration: underline  ;
+}
 </style>

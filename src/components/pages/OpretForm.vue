@@ -11,8 +11,8 @@ const title = ref('');
 const date = ref('');
 const location = ref('');
 const content = ref('');
-const username = ref('admin');
-const password = ref('admin');
+const username = ref('');
+const password = ref('');
 
 const onCreatePost = () => {
   // The fields send, to create post

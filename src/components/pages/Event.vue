@@ -1,7 +1,9 @@
 <script setup>
 import { ref } from 'vue';
-import OpretForm from '@/components/pages/OpretForm.vue';
-import SeshFooter from '@/components/pages/SeshFooter.vue';
+import SeshFooter from '../pages/SeshFooter.vue';
+import OpretForm from '../pages/OpretForm.vue';
+import SearchSection from '../SearchSection.vue';
+import RightSidebar from '../RightSidebar.vue';
 
 const events = ref([]);
 const showForm = ref(false);
@@ -55,32 +57,39 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     });
   });
 
-
-
 </script>
 
+
 <template>
-  <div class="darkframe">
-    <div class="">
-      <img class="banner" src="../../assets/bannerheader2.png" alt="">
-    </div>
 
-    <div class="event_calender_list">
-      <div class="list_head">
-        <div>
-          <button id="arrow-left"></button>
-          <button id="arrow-right"></button>
+<section class="layout">
+    <div class="header">
+       <img class="banner" src="../../assets/bannerheader1.png" alt="">
+        <div class="darkframe"></div>
+    </div>
+    
+    <div class="bodygrid list_wrap">2
+      <div class="salami">
+        <SearchSection/>
+
+        <div class="event_calender_list">
+            <div class="list_head">
+                <div>
+                    <button id="arrow-left"></button>
+                    <button id="arrow-right"></button>
+                </div>
+                <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+            </div>
         </div>
-        <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+        <div class="month_layout">
+            <h2 class="h2month">APRIL 2023</h2>
+            <hr class="line">
+        </div>
       </div>
-      <div class="month_layout">
-        <h2 class="h2month">April 2023</h2>
-        <hr class="line">
-      </div>
-    </div>
-    <div class="list_sidebar_wrap">
+        <div class="event_calender_row" v-for="event in events" :key="event.id">
 
-      <div class="event_calender_row" v-for="event in events" :key="event.id">
+          
+
         <div class="event_calender_item">
           <div class="event_calender_date_tag">
             <p class="date_style" v-if="event">{{ event.plainDate }}</p>
@@ -97,28 +106,81 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
           </div>
         </div>
       </div>
-
-      <div class="sidebar">
-        <img />
-        <h3 style="color:white">title</h3>
-        <p style="color:white">date</p>
-      </div>
     </div>
-  </div>
 
+    <div class="rightSide">
+      <RightSidebar/>
+    </div>
+    
+    
+    
 
-  <teleport to="body">
+    <teleport to="body">
     <div v-if="showForm">
       <OpretForm />
     </div>
   </teleport>
 
-  <div>
+
+  <div class="footer">
     <SeshFooter />
+
   </div>
+  
+</section>
+
+
+
 </template>
 
+
+
 <style scoped>
+
+.layout {
+  width: 1366px;
+  height: auto;
+  background-color: black;
+  display: grid;
+  grid:
+    "header header header header" auto
+    "body body rightSide rightSide" 1fr
+    "footer footer footer footer" auto
+    / auto 1fr auto;
+  gap: 0px;
+  grid-auto-flow: row dense;
+}
+
+.header { 
+    grid-area: header; 
+}
+.bodygrid { 
+    grid-area: body;
+    background-color: rgb(0, 0, 0);
+}
+
+.list_wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.rightSide { 
+    grid-area: rightSide;
+    background-color: rgb(0, 0, 0);
+    border-style: solid;
+    border-color: rgb(253, 253, 253);
+    margin: 1em;
+    clear: both;
+    width: auto;   
+}
+
+.salami {
+  margin: 1em;
+}
+.footer { 
+    grid-area: footer; 
+    background-color: rgb(255, 255, 255)
+}
 
 
 

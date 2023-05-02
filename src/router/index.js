@@ -4,7 +4,7 @@ import Home from '../components/pages/Home.vue'
 import Event from '../components/pages/Event.vue'
 import EventDetaljer from '../components/pages/EventDetaljer.vue'
 import NotFound from '../components/NotFound.vue'
-import test from '../components/pages/test.vue'
+
 
 const routes = [
     {
@@ -23,11 +23,7 @@ const routes = [
         path: '/:pathMatch(.*)*',
         component: NotFound
     },
-    {
-        path: '/test',
-        component: test
-    }
-
+  
 
 ]
 
