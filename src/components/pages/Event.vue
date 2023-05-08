@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, computed } from 'vue';
 import SeshFooter from '../pages/SeshFooter.vue';
 import OpretForm from '../pages/OpretForm.vue';
 import SearchSection from '../SearchSection.vue';
@@ -18,20 +18,14 @@ const getPlainText = (content) => {
 };
 
 const getPlainDate = (dateString) => {
+  if (!dateString) {
+    return '';
+  }
   const year = dateString.substring(0, 4);
-  const monthNumber = parseInt(dateString.substring(4, 6)) - 1;
-  const day = parseInt(dateString.substring(6, 8));
+  const month = dateString.substring(4, 6);
+  const day = dateString.substring(6, 8);
 
-  const monthNames = [
-    "Januar", "Februar", "Marts",
-    "April", "Maj", "Juni", "Juli",
-    "August", "September", "Oktober",
-    "November", "December"
-  ];
-
-  const monthName = monthNames[monthNumber];
-
-  return `${day} ${monthName} ${year}`;
+  return `${year}-${month}-${day}`;
 };
 
 const getFeaturedImageUrl = (event) => {
@@ -59,12 +53,10 @@ currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear()
 
 const changeMonth = (direction) => {
   currentDate.setMonth(currentDate.getMonth() + direction);
-  currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear();
+  const year = currentDate.getFullYear();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+  currentMonth.value = `${year}-${month}`;
 };
-
-onMounted(() => {
-  currentMonth.value = getMonthName(currentDate) + ' ' + currentDate.getFullYear();
-});
 
 fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
   .then(response => response.json())
@@ -72,59 +64,64 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     events.value = data.map(event => {
       const plainDate = getPlainDate(event.acf.event_date);
       const plainText = getPlainText(event.content.rendered);
-      return { ...event, plainText, plainDate, eventLocation: event.acf.location,currentMonth };
+      return { ...event, plainText, plainDate, eventLocation: event.acf.location,currentMonth};
     });
   });
+
+const filteredEvents = computed(() => {
+  return events.value.filter(event => {
+    return event.plainDate.startsWith(currentMonth.value);
+  });
+});
+
 </script>
 
 
 
 
 <template>
-
-<section class="layout">
+  <section class="layout">
     <div class="header">
-       <img class="banner" src="../../assets/bannerheader1.png" alt="">
-        <div class="darkframe"></div>
+      <img class="banner" src="../../assets/bannerheader1.png" alt="">
+      <div class="darkframe"></div>
     </div>
-    
-    <div class="bodygrid list_wrap">2
+
+    <div class="bodygrid list_wrap">
       <div class="salami">
-        <SearchSection/>
+        <SearchSection />
 
         <div class="event_calender_list">
-            <div class="list_head">
-                <div>
-                    <button id="arrow-left" @click="changeMonth(-1)"></button>
-                    <button id="arrow-right" @click="changeMonth(1)"></button>
-                </div>
-                <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+          <div class="list_head">
+            <div>
+              <button id="arrow-left" @click="changeMonth(-1)"></button>
+              <button id="arrow-right" @click="changeMonth(1)"></button>
             </div>
+            <button @click="showForm = true" class="btn_addevent">Opret Event</button>
+          </div>
         </div>
+
         <div class="month_layout">
-            <h2 class="h2month">{{ currentMonth }}</h2>
-            <hr class="line">
+          <h2 class="h2month">{{ currentDate.toLocaleDateString('da-DK', {month: 'long', year: 'numeric'}).replace(/^\w/, (c) => c.toUpperCase()) }} </h2>
+          <hr class="line">
         </div>
       </div>
-        <div class="event_calender_row" v-for="event in events" :key="event.id">
 
-          
-
+      <div class="event_calender_row" v-for="event in filteredEvents" :key="event.id">
         <div class="event_calender_item">
           <div class="event_calender_date_tag">
             <p class="date_style" v-if="event">{{ event.plainDate }}</p>
           </div>
           <router-link class="edlink" to="/EventDetaljer">
             <div class="event_calender_content">
-            <div class="event_detail">
-              <p class="event_loc">{{ event.eventLocation }}</p>
-              <h3>{{ event.title.rendered }}</h3>
-              <p class="event_ex">{{ getPlainText(event.excerpt.rendered) }}</p>
+              <div class="event_detail">
+                <p class="event_loc">{{ event.eventLocation }}</p>
+                <h3>{{ event.title.rendered }}</h3>
+                <p class="event_ex">{{ getPlainText(event.excerpt.rendered) }}</p>
+              </div>
+              <div class="event_img">
+                <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
+              </div>
             </div>
-            <div class="event_img">
-              <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
-            </div>
-          </div>
           </router-link>
         </div>
       </div>

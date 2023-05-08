@@ -1,7 +1,8 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { defineProps } from 'vue';
-import { onMounted } from 'vue';
+
+
 
 const props = defineProps({
   title: String,
@@ -11,18 +12,35 @@ const title = ref('');
 const date = ref('');
 const location = ref('');
 const content = ref('');
-const username = ref('admin');
-const password = ref('admin');
+const username = ref('');
+const password = ref('');
 
 const onCreatePost = () => {
   // The fields send, to create post
   const body = {
     title: title.value,
-    date: date.value,
+    date: formatDate(date.value),
     location: location.value,
     content: content.value,
 
   };
+
+
+  function formatDate(date) {
+  const d = new Date(date);
+  const year = d.getFullYear();
+  const month = d.getMonth() + 1;
+  const day = d.getDate();
+
+  const formattedMonth = month < 10 ? `0${month}` : month;
+  const formattedDay = day < 10 ? `0${day}` : day;
+
+  return `${formattedDay}.${formattedMonth}.${year}`;
+}
+
+const date = new Date('2019-11-05T02:11:16Z');
+const formattedDate = date.toLocaleString('da-DK', { timeZone: 'Denmark' });
+console.log(formattedDate);
 
   const encodedUser = btoa(`${username.value}:${password.value}`);
 
@@ -37,8 +55,13 @@ const onCreatePost = () => {
   })
     // Success response
     .then((response) => {
-      console.log(response);
+      return response.json()
     })
+
+    .then((response) => {
+      console.log(response)
+    })
+
     // Error response
     .catch((error) => {
       console.log(error);
@@ -77,7 +100,7 @@ onMounted(() => {
         <div>
           <label for="title">Event Navn</label>
           <div>
-            <input type="text" id="title" v-model="title">
+            <input type="text" v-model="title" id="title" >
           </div>
         </div>
 
@@ -85,13 +108,13 @@ onMounted(() => {
           <div class="datoogtid2">
             <label class="datolabel" for="date">Dato</label>
             <div>
-              <textarea v-model="date" id="date"></textarea>
+              <input type="date" v-model="date" id="date">
             </div>
           </div>
           <div class="datoogtid2">
-          <label class="datolabel" for="date">Tid</label>
+          <label class="timelabel" for="time">Tid</label>
           <div>
-            <textarea v-model="date" id="date"></textarea>
+            <input type="time" v-model="date" id="time">
           </div>
           </div>
         </div>
@@ -122,13 +145,13 @@ onMounted(() => {
           <div class="adresseogby2">
             <label for="location">Adresse</label>
             <div>
-              <textarea v-model="date" id="adresse"></textarea>
+              <input type="text" v-model="location" id="location">
             </div>
           </div>
           <div class="adresseogby2">
           <label class="bylabel" for="by">By</label>
           <div>
-            <textarea v-model="date" id="date"></textarea>
+            <input type="text" v-model="location" id="location">
           </div>
           </div>
         </div>
@@ -136,7 +159,7 @@ onMounted(() => {
         <div class="pris2">
           <label for="pris">Pris</label>
           <div>
-            <textarea v-model="location" id="pris"></textarea>
+            <input type="currency" v-model="location" id="location">
           </div>
         </div>
 
