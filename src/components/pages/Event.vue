@@ -56,6 +56,7 @@ const changeMonth = (direction) => {
   const year = currentDate.getFullYear();
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
   currentMonth.value = `${year}-${month}`;
+  filteredEvents.value; // trigger re-computation
 };
 
 fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
@@ -68,11 +69,20 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     });
   });
 
-const filteredEvents = computed(() => {
-  return events.value.filter(event => {
+  const filteredEvents = computed(() => {
+  const eventsInCurrentMonth = events.value.filter(event => {
     return event.plainDate.startsWith(currentMonth.value);
   });
+  const sortedEvents = eventsInCurrentMonth.sort((a, b) => {
+    const dateA = new Date(a.plainDate);
+    const dateB = new Date(b.plainDate);
+    return dateA - dateB;
+  });
+  return sortedEvents;
 });
+
+
+
 
 </script>
 

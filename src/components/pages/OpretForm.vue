@@ -12,22 +12,11 @@ const title = ref('');
 const date = ref('');
 const location = ref('');
 const content = ref('');
-const username = ref('');
-const password = ref('');
+const username = ref('admin');
+const password = ref('admin');
 
-const onCreatePost = () => {
-  // The fields send, to create post
-  const body = {
-    title: title.value,
-    date: formatDate(date.value),
-    location: location.value,
-    content: content.value,
-
-  };
-
-
-  function formatDate(date) {
-  const d = new Date(date);
+function formatDate(da) {
+  const d = new Date(da);
   const year = d.getFullYear();
   const month = d.getMonth() + 1;
   const day = d.getDate();
@@ -38,11 +27,21 @@ const onCreatePost = () => {
   return `${formattedDay}.${formattedMonth}.${year}`;
 }
 
-const date = new Date('2019-11-05T02:11:16Z');
-const formattedDate = date.toLocaleString('da-DK', { timeZone: 'Denmark' });
-console.log(formattedDate);
+const onCreatePost = () => {
+  // The fields send, to create post
+  const body = {
+    title: title.value,
+    //date: formatDate(date.value),
+    //location: location.value,
+    content: content.value,
 
+  };
+
+
+console.log(username.value, password.value);
   const encodedUser = btoa(`${username.value}:${password.value}`);
+  
+console.log(encodedUser)
 
   // Send the POST request to the server
   fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
@@ -111,12 +110,7 @@ onMounted(() => {
               <input type="date" v-model="date" id="date">
             </div>
           </div>
-          <div class="datoogtid2">
-          <label class="timelabel" for="time">Tid</label>
-          <div>
-            <input type="time" v-model="date" id="time">
-          </div>
-          </div>
+>
         </div>
 
         <div class="billedeimport">
@@ -153,13 +147,6 @@ onMounted(() => {
           <div>
             <input type="text" v-model="location" id="location">
           </div>
-          </div>
-        </div>
-
-        <div class="pris2">
-          <label for="pris">Pris</label>
-          <div>
-            <input type="currency" v-model="location" id="location">
           </div>
         </div>
 

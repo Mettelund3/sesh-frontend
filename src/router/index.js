@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from '../components/pages/Home.vue'
 import Event from '../components/pages/Event.vue'
@@ -10,7 +10,7 @@ const routes = [
     {
         path: '/',
         component: Home
-    }, 
+    },
     {
         path: '/Event',
         component: Event
@@ -23,12 +23,12 @@ const routes = [
         path: '/:pathMatch(.*)*',
         component: NotFound
     },
-  
+
 
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes
 })
 
