@@ -119,7 +119,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
       <div class="event_calender_row" v-for="event in filteredEvents" :key="event.id">
         <div class="event_calender_item">
           <div class="event_calender_date_tag">
-            <p class="date_style" v-if="event">{{ event.plainDate }}</p>
+            <p class="date_style" v-if="event">{{ new Date(event.plainDate).toLocaleString('da-DA', { month: 'long', day: 'numeric' }) }}</p>
           </div>
           <router-link class="edlink" to="/EventDetaljer">
             <div class="event_calender_content">
