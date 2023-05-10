@@ -6,8 +6,8 @@
 
     .headtext_sidebar {
         color: white ;
-        font-family: 'AvenirSmallH' sans-serif;
-        font-size: 1.375em;
+        font-family: 'AvenirMediumH' sans-serif;
+        font-size: 1.8em;
         text-align: center;
         margin-top: 3em;
 
@@ -18,33 +18,35 @@
     .sidebar_line {
         margin-left: 2em;
         margin-right: 2em;
-        margin-top: 4em;
+        margin-top: 3.1em;
         color: white;    
     }
 
     .sidebar_event {
         display: flex;
-        margin: 1em;
+        margin-top: 3em;
+        margin-left: 2em;
+        margin-right: 2em;
        
 
         .sidebar_img {
             max-width: 100px;
             height: 100px;
-
         }
 
         .sidebar_event_details {
             flex-wrap: wrap; 
-            margin-left: 5%;  
+            margin-left: 10%;  
             
             .sidebar_title {
-                color: white;
-                
-                
+                color: white;                
             }
 
             .sidebar_date {
                 color: white;
+                font-family: 'BaskerRegularPara', serif;
+                font-size: 1.2em;
+                margin-top: 0.7em;
             }
 
 
