@@ -8,7 +8,7 @@ import RightSidebar from '../RightSidebar.vue';
             <img class="banner" src="../../assets/bannerheader1.png" alt="">
         </div>
         <div class="event_dlayout">
-            <div class="">
+            <div class="event_content">
                 <div class="edtitelbg">
                     <h2 class="edtitel">Indvielse af skatebænke & Best linje i Nicolai gården i Kolding by</h2>
                     <p class="eddato">Lørdag d. 13 Maj - 16:00-18:00</p>
