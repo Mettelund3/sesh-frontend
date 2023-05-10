@@ -95,11 +95,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
       <img class="banner" src="../../assets/bannerheader1.png" alt="">
       <div class="darkframe"></div>
     </div>
-<<<<<<< Updated upstream
-
-=======
     
->>>>>>> Stashed changes
     <div class="bodygrid list_wrap">
       <div class="salami">
         <SearchSection />
@@ -119,7 +115,6 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
           <hr class="line">
         </div>
       </div>
-<<<<<<< Updated upstream
 
       <div class="event_calender_row" v-for="event in filteredEvents" :key="event.id">
         <div class="event_calender_item">
@@ -138,27 +133,8 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
               </div>
             </div>
           </router-link>
-=======
-        <div class="event_calender_row" v-for="event in events" :key="event.id">
-          <div class="event_calender_item">
-            <div class="event_calender_date_tag">
-              <p class="date_style" v-if="event">{{ event.plainDate }}</p>
-            </div>
-            <router-link class="edlink" to="/EventDetaljer">
-              <div class="event_calender_content">
-                <div class="event_detail">
-                  <p class="event_loc">{{ event.eventLocation }}</p>
-                  <h3>{{ event.title.rendered }}</h3>
-                  <p class="event_ex">{{ getPlainText(event.excerpt.rendered) }}</p>
-                </div>
-                <div class="event_img">
-                  <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
-                </div>
-              </div>
-            </router-link>
-          </div>
->>>>>>> Stashed changes
         </div>
+      </div>
     </div>
 
     <div class="rightSide">
