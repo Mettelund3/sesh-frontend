@@ -1,0 +1,81 @@
+.group-three {
+    background-color: white;
+    padding: 1em;
+    padding-right: 10%;    
+    padding-left: 10%;
+
+    .flex-wrapper-two {
+        margin-bottom: 21px;
+        display: flex;
+        align-items:flex-start;
+        justify-content: space-between;
+    
+        .e-mail {
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: black;
+            align-self: stretch;
+            text-align: center;
+        }
+        .seshdanmark-com {
+            font-family: "Libre Baskerville";
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 21px;
+            color: black;
+            text-align: center;
+            letter-spacing: 1.04px;
+        }
+        .telefon {
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: black;
+            align-self: stretch;
+            text-align: center;
+        }
+        .num-20-67-98-55 {
+            font-family: "Libre Baskerville";
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 21px;
+            color: black;
+            text-align: center;
+            letter-spacing: 1.04px;
+            padding-bottom: 10%;
+        }
+        .num-2023-sesh-danmark {
+            font-family: "Libre Baskerville";
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 16px;
+            color: black;
+            align-self: center;
+            letter-spacing: 0.8px;
+          }
+        .social {
+            width: 8.61%;
+            font-family: "Roboto";
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: black;
+            align-self: stretch;
+            text-align: center;
+        }
+        .group {
+            display: flex;
+            align-items: flex-start;
+
+            .image {
+                width: 40.38%;
+                align-self: stretch;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+    }
+}
