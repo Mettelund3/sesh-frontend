@@ -1,96 +1,195 @@
-/* nav*/
-
-
-
-
 /* layout*/
-.darkframe {
-  max-width: fit-content;
-  background-color: black;
-  padding: 1em;
-}
-
-
-.banner {
-  max-width: 100%;
+.layout {
+  width: 1366px;
   height: auto;
-  padding: - 1em;
-  
+  background-color: black;
+  display: grid;
+  grid:
+    "header header header header" auto
+    "body body rightSide rightSide" 1fr
+    "footer footer footer footer" auto
+    / auto 1fr auto;
+  gap: 0px;
+  grid-auto-flow: row dense;
+
+  .header { 
+    grid-area: header;
+
+    .darkframe {
+      max-width: fit-content;
+      background-color: black;
+      padding: 1em;
+    } 
+    .banner {
+      max-width: 100%;
+      height: auto;
+      padding: - 1em;
+      
+    }
+  }
 }
 
 /* liste calender*/
 
-.event_calender_row {
-  max-width: 100%;
-  overflow-x:auto;
-
+.bodygrid { 
+    grid-area: body;
+    background-color: rgb(0, 0, 0);
 }
- 
-.event_calender_item {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin: 1rem 1rem 1rem 1rem;
-  background-color: rgb(0, 0, 0);
-}
+.list_wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 
-.event_calender_date_tag {
-  flex: 0 auto;
-  margin: 1rem;
-  justify-content: first baseline;
-}
+  .salami {
+  margin: 1em;
 
-.event_calender_content {
-  display: flex;
-  align-items: center;
-  
-}
+    .list_head {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2em;
+      margin-bottom: 1em;  
 
-.event_detail {
-  flex: 1 1 auto;
-  height: 200px;
-  margin-right: 1rem;
-  padding: 1rem;
-  background-color: white;
-}
+      #arrow-left {
+        background-image: url('../../src/assets/arrowleft.svg');
+        background-color: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        padding: 1em;
+        border: none;
+      }
+      #arrow-right {
+        background-image: url('../../src/assets/right-arrow.svg');
+        background-color: black;
+        background-size: contain;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        padding: 1em;
+        border: none;
+        margin-left: 10px;
+      }
+      #arrow-right:hover,
+      #arrow-left:hover {
+        background-color: #CC3333;
+      }
 
-.event_img {
-  flex: 0 1 auto;
+      .btn_addevent {
+        height: 35px;
+        width: 100px;
+        background-image: url('../assets/sesh-knap.png');
+        color: rgb(255, 255, 255);
+        border: none;
+        cursor: pointer;
+      }
+    }
+    .month_layout {
+      display: flex;
+      align-items: center;
+      margin-top: 2em;
+      margin-bottom: 1em;
 
-}
+      .h2month {
+        margin-right: 10px;
+        color: white;
+      }
+      .line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: black;
+        margin-left: 10px;
+      }
+    }
+  }
+  .event_calender_row {
+    max-width: 100%;
+    overflow-x:auto;
 
-.img_list {
-  width:  200px;
-  height: 200px;
-}
+    .event_calender_item {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      margin: 1rem 1rem 1rem 1rem;
+      background-color: rgb(0, 0, 0);
 
-.list_head {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2em;
-  margin-bottom: 1em;  
-}
+      .event_calender_date_tag {
+        flex: 0 auto;
+        margin: 1rem;
+        justify-content: first baseline;
 
-.month_layout {
-  display: flex;
-  align-items: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
-}
+        .date_style {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          height: 150px;
+          font-size: 1.25em;
+          font-weight: 600;
+          padding: 1rem;
+          height: 200px;
+          color: black;
+          background-color: rgb(255, 255, 255);
+        }
+      }
+      .edlink {
+        text-decoration: none;
+      }
+      .event_calender_content {
+        display: flex;
+        align-items: center;
 
-.h2month {
-  margin-right: 10px;
-  color: white;
-}
+        .event_detail {
+          flex: 1 1 auto;
+          height: 200px;
+          margin-right: 1rem;
+          padding: 1rem;
+          background-color: white;
 
-.line {
-  flex-grow: 1;
-  height: 1px;
-  background-color: black;
-  margin-left: 10px;
+          .event_loc {
+            color: rgb(15, 15, 15);
+            font-weight: 300;
+            font-size: 0.9em;
+            font-family: 'BaskerPara', serif;
+          }
+          h3 {
+            color: black;
+            font-size: 1.5em;
+            font-weight: 600;
+            font-family: 'AvenirH', sans-serif;
+          }
+          .event_ex {
+            color: black;
+            font-size: 1em;
+            font-family: 'BaskerSemibPara', serif;
+          }       
+        }
+        .event_img {
+          flex: 0 1 auto;
+
+          .img_list {
+            width:  200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
 }
 
 /*sidebar*/
+.rightSide { 
+  grid-area: rightSide;
+  background-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-color: rgb(253, 253, 253);
+  margin: 1em;
+  clear: both;
+  width: auto;   
+}
+
+.footer { 
+  grid-area: footer; 
+  background-color: rgb(255, 255, 255)
+}
 
 .line2 {
   margin-left: 2em;
@@ -104,19 +203,7 @@
 }
 
 
-
-
 /* styling */
-h1 {
-  color: white;
-}
-
-h3 {
-  color: black;
-  font-size: 1.5em;
-  font-weight: 600;
-  font-family: 'AvenirH', sans-serif;
-}
 
 h4 {
   color: white;
@@ -135,79 +222,3 @@ h4 {
 }
 
 
-.date_style {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  height: 150px;
-  font-size: 1.25em;
-  font-weight: 600;
-  padding: 1rem;
-  height: 200px;
-  color: black;
-  background-color: rgb(255, 255, 255);
- 
-}
-
-.event_loc {
-  color: rgb(15, 15, 15);
-  font-weight: 300;
-  font-size: 0.9em;
-  font-family: 'BaskerPara', serif;
-}
-
-.event_ex {
-  color: black;
-  font-size: 1em;
-  font-family: 'BaskerSemibPara', serif;
-  
-}
-
-
-
-
-/* buttons */
-
-#arrow-left {
-  background-image: url('../../src/assets/arrowleft.svg');
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  padding: 1em;
-  border: none;
-
-}
-
-#arrow-right {
-  background-image: url('../../src/assets/right-arrow.svg');
-  background-color: black;
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  padding: 1em;
-  border: none;
-  margin-left: 10px;
-
-}
-
-#arrow-right:hover,
-#arrow-left:hover {
-
-  background-color: #CC3333;
-
-}
-
-.btn_addevent {
-  height: 35px;
-  width: 100px;
-  background-image: url('../assets/sesh-knap.png');
-  color: rgb(255, 255, 255);
-  border: none;
-  cursor: pointer;
-}
-
-.edlink {
-  text-decoration: none;
-}
