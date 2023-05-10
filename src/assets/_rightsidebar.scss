@@ -1,40 +1,43 @@
+@import './_base.scss';
+
 .sidebar {
     
 
     .headtext_sidebar {
 
 
-        .sidebar_line {
 
-
-            .sidebar_event {
-                display: flex;
-                flex-wrap: wrap;
-
-                .sidebar_img {
-                    width: 50%;
-                    height: 50%;
-
-                }
-
-
-
-            }
-        }
     }
     .sidebar_line {
 
 
-        .sidebar_event {
-            display: flex;
-            flex-wrap: wrap;
+    
+    }
 
-            .sidebar_img {
-                width: 50%;
-                height: 50%;
+    .sidebar_event {
+        display: flex;
+        margin: 1em;
+       
 
+        .sidebar_img {
+            max-width: 100px;
+            height: 100px;
+
+        }
+
+        .sidebar_event_details {
+            flex-wrap: wrap; 
+            margin-left: 5%;  
+            
+            .sidebar_title {
+                color: white;
+                
+                
             }
 
+            .sidebar_date {
+                color: white;
+            }
 
 
         }

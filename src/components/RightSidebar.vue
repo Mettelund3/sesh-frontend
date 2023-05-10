@@ -74,8 +74,8 @@ onMounted(() => {
       <div v-for="event in upcomingEvents" :key="event.id" class="sidebar_event">
         <img class="sidebar_img" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
         <div class="sidebar_event_details">
-          <h3>{{ event.title.rendered }}</h3>
-          <p>{{ new Date(event.plainDate).toLocaleDateString('da-DK', {month: 'long', day: 'numeric' }) }}</p>
+          <h3 class="sidebar_title">{{ event.title.rendered }}</h3>
+          <p class="sidebar_date">{{ new Date(event.plainDate).toLocaleDateString('da-DK', {month: 'long', day: 'numeric' }) }}</p>
         </div>
       </div>
     </div>
