@@ -51,7 +51,7 @@
     border: none;
     cursor: pointer;
     width: 100px;
-    height: 35px;
+    height: 34px;
     
     
 }
@@ -84,6 +84,7 @@
 
 
 .btn_toggle:after {
-text-decoration: underline  ;
+text-decoration: underline ;
+color: black;
 }
 </style>
