@@ -29,8 +29,3 @@ import RightSidebar from '../RightSidebar.vue';
         <router-link class="edlink" to="/Event"><button class="edknap" id="edpil">Tilbage</button></router-link>
     </section>
 </template>
-
-<style scoped>
-@import "../../assets/_base.scss";
-@import "../../assets/_eventdetaljer.scss";
-</style>
