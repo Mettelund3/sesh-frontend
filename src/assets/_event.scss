@@ -175,6 +175,10 @@
   }
 }
 
+.footer { 
+  grid-area: footer; 
+  background-color: rgb(255, 255, 255)
+}
 /*sidebar*/
 .rightSide { 
   grid-area: rightSide;
@@ -186,11 +190,6 @@
   width: auto;   
 }
 
-.footer { 
-  grid-area: footer; 
-  background-color: rgb(255, 255, 255)
-}
-
 .line2 {
   margin-left: 2em;
   margin-right: 2em;
@@ -199,18 +198,6 @@
 }
 .sidebar {
   width: 300px;
-
-}
-
-
-/* styling */
-
-h4 {
-  color: white;
-}
-
-.p_latest {
-  color: white;
 }
 
 .headtext_sidebar {

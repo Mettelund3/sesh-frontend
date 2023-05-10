@@ -80,14 +80,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
   });
   return sortedEvents;
 });
-
-
-
-
 </script>
-
-
-
 
 <template>
   <section class="layout">
@@ -99,7 +92,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     <div class="bodygrid list_wrap">
       <div class="salami">
         <SearchSection />
-
+      
         <div class="event_calender_list">
           <div class="list_head">
             <div>
@@ -140,40 +133,16 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
     <div class="rightSide">
       <RightSidebar/>
     </div>
-    
-    
-    
-
+ 
     <teleport to="body">
-    <div v-if="showForm">
-      <OpretForm />
+      <div v-if="showForm">
+        <OpretForm />
+      </div>
+    </teleport>
+
+
+    <div class="footer">
+      <SeshFooter />
     </div>
-  </teleport>
-
-
-  <div class="footer">
-    <SeshFooter />
-
-  </div>
-  
-</section>
-
-
-
+  </section>
 </template>
-
-
-
-<style scoped>
-
-
-
-
-
-
-
-
-
-
-
-</style>
