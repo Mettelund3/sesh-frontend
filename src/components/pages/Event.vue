@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue';
-import SeshFooter from '../pages/SeshFooter.vue';
-import OpretForm from '../pages/OpretForm.vue';
+import SeshFooter from '../SeshFooter.vue';
+import OpretForm from '../OpretForm.vue';
 import SearchSection from '../SearchSection.vue';
 import RightSidebar from '../RightSidebar.vue';
 

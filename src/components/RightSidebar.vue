@@ -62,10 +62,7 @@ onMounted(() => {
       });
     });
 });
-
 </script>
-
-
 
 <template>
     <div class="sidebar">
@@ -80,8 +77,3 @@ onMounted(() => {
       </div>
     </div>
 </template>
-  
-
-<style scoped>
-
-</style>
