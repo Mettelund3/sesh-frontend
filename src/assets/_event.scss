@@ -175,10 +175,12 @@
   }
 }
 
+/* Footer */
 .footer { 
   grid-area: footer; 
   background-color: rgb(255, 255, 255)
 }
+
 /*sidebar*/
 .rightSide { 
   grid-area: rightSide;
@@ -189,8 +191,3 @@
   clear: both;
   width: auto;   
 }
-
-
-
-
-

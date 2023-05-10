@@ -1,7 +1,5 @@
 <script setup>
 import RightSidebar from '../RightSidebar.vue';
-
-
 </script>
 
 <template>
@@ -27,10 +25,7 @@ import RightSidebar from '../RightSidebar.vue';
             <p>Gratis</p>
         </div>
         <router-link class="edlink" to="/Event"><button class="edknap" id="edpil">Tilbage</button></router-link>
-        
     </section>
-
-   
 </template>
 
 <style scoped>
