@@ -1,5 +1,6 @@
 <script setup>
 import RightSidebar from '../RightSidebar.vue';
+import SeshFooter from '../SeshFooter.vue';
 </script>
 
 <template>
@@ -38,5 +39,10 @@ import RightSidebar from '../RightSidebar.vue';
 
         </div>
         <router-link class="edlink" to="/Event"><button class="edknap" id="edpil">Tilbage</button></router-link>
+    <div class="footer">
+      <SeshFooter />
+    </div>
+
     </section>
+
 </template>
