@@ -84,12 +84,4 @@ onMounted(() => {
 
 <style scoped>
 
-
-.latest_row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-
 </style>
