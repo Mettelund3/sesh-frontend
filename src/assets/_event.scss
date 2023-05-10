@@ -76,12 +76,16 @@
       .btn_addevent {
         height: 35px;
         width: 100px;
-        background-image: url('../assets/sesh-knap.png');
+        background-color: #CC3333;
         color: rgb(255, 255, 255);
         border: none;
         cursor: pointer;
       }
+      .btn_addevent:hover {
+        background-color: #961b1b;
+      }
     }
+    
     .month_layout {
       display: flex;
       align-items: center;
