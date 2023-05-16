@@ -6,4 +6,9 @@ import router from './router'
 
 import './assets/main.scss'
 
-createApp(App).use(router).mount('#app')
+
+const app = createApp(App)
+app.use(router)
+
+app.mount('#app')
+

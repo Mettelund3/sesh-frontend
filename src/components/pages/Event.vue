@@ -1,18 +1,21 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue';
+import { useRouter } from 'vue-router';
 import SeshFooter from '../SeshFooter.vue';
 import OpretForm from '../OpretForm.vue';
 import SearchSection from '../SearchSection.vue';
 import RightSidebar from '../RightSidebar.vue';
 
+const router = useRouter();
 const events = ref([]);
 const showForm = ref(false);
+const shouldUpdateFilteredEvents = ref(false);
 
 const getPlainText = (content) => {
   const parser = new DOMParser();
   const html = parser.parseFromString(content, 'text/html');
   const firstParagraph = html.querySelector('p');
-  const plainText = firstParagraph.textContent;
+  const plainText = firstParagraph ? firstParagraph.textContent : '';
   const noHtmlText = plainText.replace(/<(?:.|\n)*?>/gm, '');
   return noHtmlText;
 };
@@ -24,7 +27,6 @@ const getPlainDate = (dateString) => {
   const year = dateString.substring(0, 4);
   const month = dateString.substring(4, 6);
   const day = dateString.substring(6, 8);
-
   return `${year}-${month}-${day}`;
 };
 
@@ -56,31 +58,50 @@ const changeMonth = (direction) => {
   const year = currentDate.getFullYear();
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
   currentMonth.value = `${year}-${month}`;
-  filteredEvents.value; // trigger re-computation
+  filteredEvents.value;
 };
 
-fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
-  .then(response => response.json())
-  .then(data => {
-    events.value = data.map(event => {
-      const plainDate = getPlainDate(event.acf.event_date);
-      const plainText = getPlainText(event.content.rendered);
-      return { ...event, plainText, plainDate, eventLocation: event.acf.location,currentMonth};
-    });
-  });
 
-  const filteredEvents = computed(() => {
+
+
+const filteredEvents = computed(() => {
   const eventsInCurrentMonth = events.value.filter(event => {
     return event.plainDate.startsWith(currentMonth.value);
   });
+
   const sortedEvents = eventsInCurrentMonth.sort((a, b) => {
     const dateA = new Date(a.plainDate);
     const dateB = new Date(b.plainDate);
     return dateA - dateB;
   });
+
   return sortedEvents;
 });
+
+onMounted(() => {
+  fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
+    .then(response => response.json())
+    .then(data => {
+      events.value = data.map(event => {
+        const plainDate = getPlainDate(event.acf.event_date);
+        const plainText = getPlainText(event.content.renderd);
+        return { ...event, plainText, plainDate, eventLocation: event.acf.location };
+      });
+      
+      changeMonth(0);
+      console.log(filteredEvents.value);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+});
+
+
+//  @click="$router.push(`/eventdetaljer/${event.id}`,{params:{id:event.id}} )">
 </script>
+
+
+
 
 <template>
   <section class="layout">
@@ -88,11 +109,11 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
       <img class="banner" src="../../assets/bannerheader1.png" alt="">
       <div class="darkframe"></div>
     </div>
-    
+
     <div class="bodygrid list_wrap">
       <div class="salami">
         <SearchSection />
-      
+
         <div class="event_calender_list">
           <div class="list_head">
             <div>
@@ -104,17 +125,24 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
         </div>
 
         <div class="month_layout">
-          <h2 class="h2month">{{ currentDate.toLocaleDateString('da-DK', {month: 'long', year: 'numeric'}).replace(/^\w/, (c) => c.toUpperCase()) }} </h2>
+          <h2 class="h2month">{{ currentDate.toLocaleDateString('da-DK', {
+            month: 'long', year: 'numeric'
+          }).replace(/^\w/,
+            (c) => c.toUpperCase()) }} </h2>
           <hr class="line">
         </div>
       </div>
 
-      <div class="event_calender_row" v-for="event in filteredEvents" :key="event.id">
+      <div class="event_calender_row" v-for="event in filteredEvents" :key="event.id"
+        @click="$router.push(`/eventdetaljer/${event.id}`)">
         <div class="event_calender_item">
           <div class="event_calender_date_tag">
-            <p class="date_style" v-if="event">{{ new Date(event.plainDate).toLocaleString('da-DA', { month: 'long', day: 'numeric' }) }}</p>
+            <p class="date_style" v-if="event">{{ new Date(event.plainDate).toLocaleString('da-DA', {
+              month: 'long', day:
+                'numeric'
+            }) }}</p>
           </div>
-          <router-link class="edlink" to="/EventDetaljer">
+          <RouterLink class="edlink" to="/EventDetaljer">
             <div class="event_calender_content">
               <div class="event_detail">
                 <p class="event_loc">{{ event.eventLocation }}</p>
@@ -125,15 +153,15 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event')
                 <img class="img_list" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
               </div>
             </div>
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>
 
     <div class="rightSide">
-      <RightSidebar/>
+      <RightSidebar />
     </div>
- 
+
     <teleport to="body">
       <div v-if="showForm">
         <OpretForm />
