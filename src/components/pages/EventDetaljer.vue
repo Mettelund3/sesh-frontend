@@ -24,7 +24,7 @@ const getPlainDate = (dateString) => {
   const year = dateString.substring(0, 4);
   const month = dateString.substring(4, 6);
   const day = dateString.substring(6, 8);
-  return `${year}-${month}-${day}`;
+  return `${day}.${month}.${year}`;
 };
 
 const getFeaturedImageUrl = (post) => {
@@ -79,7 +79,7 @@ onBeforeMount(async () => {
         <div class=" bodygrid list_wrap" v-if="post">
           <div class="edtitelbg">
             <h2 class="edtitel"> {{ post.title.rendered }}</h2>
-            <p class="eddato">{{ getPlainDate(post.acf.event_date) }} </p>
+            <p class="eddato">{{ getPlainDate(post.acf.event_date)  }} </p>
           </div>
           <img class="edbanner" :src="getFeaturedImageUrl(post)" :alt="post.title.rendered"/>
           <div class="edbox">
