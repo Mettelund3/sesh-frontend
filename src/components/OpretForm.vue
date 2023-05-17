@@ -127,12 +127,6 @@ onMounted(() => {
           </div>
         </div>
 
-        <div>
-          <label for="author">Event Arrangør</label>
-          <div>
-            <textarea v-model="location" id="author"></textarea>
-          </div>
-        </div>
 
         <div class="adresseogby">
           <div class="adresseogby2">
