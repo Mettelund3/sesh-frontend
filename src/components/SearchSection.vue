@@ -1,9 +1,9 @@
 <template>
-<form class="search" action="">
-  <input type="search" placeholder="Search here..." required>
+  <form class="search" action="">
+    <input type="search" placeholder="Søg her..." required>
     <div class="btn_wrap">
-        <button type="submit" class="search_btn">Søg</button>
+      <button type="submit" class="search_btn">Søg</button>
 
     </div>
-</form>
+  </form>
 </template>
