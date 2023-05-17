@@ -89,7 +89,7 @@ onBeforeMount(async () => {
             <h4 class="edh4">Adresse</h4>
             <p>{{ post.acf.location }}</p>
           </div>
-      <router-link class="edlink" to="/"><button class="edknap" id="edpil">Tilbage</button></router-link>
+      <router-link class="edlink" to="/event"><button class="edknap" id="edpil">Tilbage</button></router-link>
 
         </div>
         <div v-else>
