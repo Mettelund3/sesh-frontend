@@ -61,9 +61,6 @@ const changeMonth = (direction) => {
   filteredEvents.value;
 };
 
-
-
-
 const filteredEvents = computed(() => {
   const eventsInCurrentMonth = events.value.filter(event => {
     return event.plainDate.startsWith(currentMonth.value);
