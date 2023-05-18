@@ -46,18 +46,13 @@ onBeforeMount(async () => {
   try {
     const response = await fetch(`https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event/${id}`);
     
-
-
       if (!response.ok){
         throw new Error(`error:${response.status}`)
-        
       }
-
      post.value = await response.json();
 
   } catch (error) {
     console.error(error);
-    
   }
   return {post,error};
   });

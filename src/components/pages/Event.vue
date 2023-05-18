@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, watch } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import SeshFooter from '../SeshFooter.vue';
 import OpretForm from '../OpretForm.vue';
@@ -9,7 +9,6 @@ import RightSidebar from '../RightSidebar.vue';
 const router = useRouter();
 const events = ref([]);
 const showForm = ref(false);
-const shouldUpdateFilteredEvents = ref(false);
 
 const getPlainText = (content) => {
   const parser = new DOMParser();
@@ -93,8 +92,6 @@ onMounted(() => {
     });
 });
 
-
-//  @click="$router.push(`/eventdetaljer/${event.id}`,{params:{id:event.id}} )">
 </script>
 
 

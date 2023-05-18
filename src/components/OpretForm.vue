@@ -43,8 +43,7 @@ console.log(username.value, password.value);
   
 console.log(encodedUser)
 
-  // Send the POST request to the server
-  fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
+fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
     method: 'post',
     headers: {
       'Content-Type': 'application/json',
@@ -52,7 +51,6 @@ console.log(encodedUser)
     },
     body: JSON.stringify(body),
   })
-    // Success response
     .then((response) => {
       return response.json()
     })
@@ -60,8 +58,6 @@ console.log(encodedUser)
     .then((response) => {
       console.log(response)
     })
-
-    // Error response
     .catch((error) => {
       console.log(error);
     });
