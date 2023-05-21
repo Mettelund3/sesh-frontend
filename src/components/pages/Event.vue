@@ -1,12 +1,10 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
 import SeshFooter from '../SeshFooter.vue';
 import OpretForm from '../OpretForm.vue';
 import SearchSection from '../SearchSection.vue';
 import RightSidebar from '../RightSidebar.vue';
 
-const router = useRouter();
 const events = ref([]);
 const showForm = ref(false);
 
@@ -91,11 +89,7 @@ onMounted(() => {
       console.error(error);
     });
 });
-
 </script>
-
-
-
 
 <template>
   <section class="layout">

@@ -5,7 +5,6 @@ import { useRoute } from 'vue-router';
 import { ref } from 'vue';
 import { onBeforeMount } from 'vue';
 
-
 const route = useRoute();
 
 const getPlainText = (content) => {
@@ -36,7 +35,6 @@ const getFeaturedImageUrl = (post) => {
   }
   return '';
 };
-
 
 const id = route.params.id;
 const post = ref(null);

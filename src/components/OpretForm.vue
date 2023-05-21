@@ -1,19 +1,17 @@
 <script setup>
-import { ref, onMounted } from 'vue';
-import { defineProps } from 'vue';
-
-
+import { ref, onMounted } from "vue";
+import { defineProps } from "vue";
 
 const props = defineProps({
   title: String,
 });
 
-const title = ref('');
-const date = ref('');
-const location = ref('');
-const content = ref('');
-const username = ref('admin');
-const password = ref('admin');
+const title = ref("");
+const date = ref("");
+const location = ref("");
+const content = ref("");
+const username = ref("admin");
+const password = ref("admin");
 
 function formatDate(da) {
   const d = new Date(da);
@@ -28,20 +26,14 @@ function formatDate(da) {
 }
 
 const onCreatePost = () => {
-  // The fields send, to create post
   const body = {
     title: title.value,
-    //date: formatDate(date.value),
-    //location: location.value,
+    date: formatDate(date.value),
+    location: location.value,
     content: content.value,
-
   };
 
-
-console.log(username.value, password.value);
-  const encodedUser = btoa(`${username.value}:${password.value}`);
-  
-console.log(encodedUser)
+const encodedUser = btoa(`${username.value}:${password.value}`);
 
 fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
     method: 'post',
@@ -67,7 +59,6 @@ const inputFile = ref(null);
 
 function handleFileSelect() {
   const file = inputFile.value.files[0];
-  // Do something with the selected file
 }
 
 function handleClick() {
