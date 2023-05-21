@@ -42,7 +42,7 @@ fetch('https://sesh.mg-visions.com/index.php/wp-json/wp/v2/event', {
       'Authorization': encodedUser
     },
     body: JSON.stringify(body),
-  })
+    })
     .then((response) => {
       return response.json()
     })
