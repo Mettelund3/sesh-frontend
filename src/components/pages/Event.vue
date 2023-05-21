@@ -83,7 +83,6 @@ onMounted(() => {
       });
       
       changeMonth(0);
-      console.log(filteredEvents.value);
     })
     .catch(error => {
       console.error(error);
