@@ -65,11 +65,11 @@ const filteredEvents = computed(() => {
     return event.plainDate.startsWith(currentMonth.value);
   });
 
-  const sortedEvents = eventsInCurrentMonth.sort((a, b) => {
+const sortedEvents = eventsInCurrentMonth.sort((a, b) => {
     const dateA = new Date(a.plainDate);
     const dateB = new Date(b.plainDate);
     return dateA - dateB;
-  });
+}); 
 
   return sortedEvents;
 });

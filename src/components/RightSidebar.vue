@@ -48,7 +48,7 @@ const filteredEvents = computed(() => {
 
 const upcomingEvents = computed(() => {
   const now = new Date();
-  return filteredEvents.value.filter(event => new Date(event.plainDate) > now);
+  return filteredEvents.value.filter(event => new Date(event.plainDate) >= now);
 });
 
 onMounted(() => {
