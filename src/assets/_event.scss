@@ -23,7 +23,7 @@
     .banner {
       max-width: 100%;
       height: auto;
-      padding: - 1em;
+      padding: 1em;
       
     }
   }
@@ -93,6 +93,7 @@
       margin-bottom: 1em;
 
       .h2month {
+        font-family: 'AvenirH', sans-serif;
         margin-right: 10px;
         color: white;
       }
@@ -118,7 +119,7 @@
       .event_calender_date_tag {
         flex: 0 auto;
         margin: 1rem;
-        justify-content: first baseline;
+        justify-content: baseline;
 
         .date_style {
           display: flex;

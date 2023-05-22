@@ -16,35 +16,7 @@ $fontsizeBigTitle: 2.500em;
 
 /* fonts */
 
-@font-face {
-  font-family: 'AvenirH';
-  src: local('AvenirH') url(./fonts/AvenirLTStd-Heavy.ttf) 
-  format("truetype"); 
 
-  font-family: 'AvenirMediumH';
-  src: local('AvenirMediumH') url(./fonts/AvenirLTStd-Medium.ttf) 
-  format("truetype"); 
-
-  font-family: 'AvenirSmallH';
-  src: local('AvenirSmallH') url(./fonts/AvenirLTStd-Light.ttf) 
-  format("truetype"); 
-
-  font-family: 'BaskerRegularPara';
-  src: local('BaskerRegularPara') url(./fonts/BaskervilleMTStd-Regular.ttf) 
-  format("truetype");
-  
-
-  font-family: 'BaskerSemibPara';
-  src: local('BaskerSemibPara') url(./fonts/BaskervilleMTStd-Semibold.ttf) 
-  format("truetype");
-  
-  
-
-  font-family: 'BaskerBold';
-  src: local('BaskerBold') url(./fonts/BaskervilleMTStd-Bold.ttf) 
-  format("truetype"); 
-
-}
 
 *,
 *::before,
