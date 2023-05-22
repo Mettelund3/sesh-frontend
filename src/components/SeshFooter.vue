@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <div class="group-three">
       <div class="flex-wrapper-two">

@@ -155,7 +155,6 @@ onMounted(() => {
       </div>
     </teleport>
 
-
     <div class="footer">
       <SeshFooter />
     </div>

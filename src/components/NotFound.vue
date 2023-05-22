@@ -3,10 +3,8 @@
 </template>
 
 <style scoped>
-
 .bu {
     color: deeppink;
     font-size: 18em;
 }
-
 </style>

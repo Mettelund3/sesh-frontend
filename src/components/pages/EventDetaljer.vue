@@ -54,12 +54,7 @@ onBeforeMount(async () => {
   }
   return {post,error};
   });
- 
-
-
 </script>
-
-
 
 <template>
   <section class="event_layout">
@@ -88,7 +83,6 @@ onBeforeMount(async () => {
         <div v-else>
           <h2>Event kan ikke findes</h2>
         </div>
-
     
       </div>
       <div class="rightSide">

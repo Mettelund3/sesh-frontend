@@ -73,7 +73,6 @@ function handleClose() {
 onMounted(() => {
   inputFile.value.addEventListener('change', handleFileSelect);
 });
-
 </script>
 
 <template>
@@ -113,7 +112,6 @@ onMounted(() => {
             <textarea v-model="content" id="content"></textarea>
           </div>
         </div>
-
 
         <div class="adresseogby">
           <div class="adresseogby2">
