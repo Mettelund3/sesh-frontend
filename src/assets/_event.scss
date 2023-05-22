@@ -119,13 +119,14 @@
       .event_calender_date_tag {
         flex: 0 auto;
         margin: 1rem;
-        justify-content: baseline;
+        
 
         .date_style {
           display: flex;
           justify-content: center;
           align-items: center;
           text-align: center;
+          font-family: 'AvenirH', sans-serif;
           height: 150px;
           font-size: 1.25em;
           font-weight: 600;

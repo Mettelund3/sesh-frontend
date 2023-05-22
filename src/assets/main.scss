@@ -7,6 +7,9 @@
 @import './_footer.scss';
 @import './_searchSection.scss';
 
+/* fonts */
+
+
 @font-face {
   font-family: 'AvenirH';
   src: local('AvenirH') url(/src/assets/fonts/AvenirLTStd-Heavy.ttf) 
@@ -36,6 +39,9 @@
   format("truetype"); 
 
 }
+
+
+
 
 #app {
   max-width: 100%;

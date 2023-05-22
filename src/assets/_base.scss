@@ -1,7 +1,4 @@
-/* color palette */
-$blackBackGround: #000000;
-$whiteBackGround: #FFFFFF;
-$redColorAccent: #CC3333;
+
 
 /* desktop sizes*/
 $navFontSize: 0.938em;
@@ -9,13 +6,6 @@ $navFontSize: 0.938em;
 $fontsizeSmallPara:0.938em;
 $fontsizeMediumTitle: 1.375em;
 $fontsizeBigTitle: 2.500em;
-
-/*mobile sizes*/
-
-
-
-/* fonts */
-
 
 
 *,
@@ -28,12 +18,10 @@ $fontsizeBigTitle: 2.500em;
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var($blackBackGround);
+  color: black;
+  background: white;
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
-  font-family: 'AvenirH' sans-serif, 'AvenirMediumH' sans-serif, 'AvenirSmallH' sans-serif, 
-  'BaskerRegularPara', 'BaskerSemibPara', 'BaskerBold';
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
