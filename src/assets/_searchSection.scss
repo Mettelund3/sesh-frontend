@@ -6,6 +6,7 @@
     background: white;
     border-radius: 3px;
     border: 1px solid #fff;
+    
 
     .btn_wrap {
         display: flex;
@@ -15,9 +16,8 @@
         margin-left: 1em;
 
         .btn_toggle {
-            font-family: 'AvenirMediumH' sans-serif;
-            background-color: #CC3333;
             color: #ffffff;
+            font-family: 'AvenirMediumH', sans-serif;
             font-weight: bold;
             border: none;
             cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 .search .search_btn {
-    font-family: 'AvenirMediumH' sans-serif;
+    font-family: 'AvenirMediumH', sans-serif;
     background-color: #CC3333;
     color: #ffffff;
     font-weight: bold;
