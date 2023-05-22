@@ -24,17 +24,16 @@
       max-width: 100%;
       height: auto;
       padding: 1em;
-      
     }
   }
 }
 
 /* liste calender*/
-
 .bodygrid { 
     grid-area: body;
     background-color: rgb(0, 0, 0);
 }
+
 .list_wrap {
     display: flex;
     flex-direction: column;

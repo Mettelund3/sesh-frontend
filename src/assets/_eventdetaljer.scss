@@ -1,5 +1,4 @@
 .event_layout {
-    
     height: auto;
     background-color: black;
     display: grid;
@@ -21,16 +20,11 @@
         display: flex;
         margin: 2em;
         
-        
-        
-
         .event_content {
             flex-wrap: wrap;
             justify-content: space-between;
             height: auto;
             
-
-        
             .edtitelbg {
                 flex: 1 1 auto;
                 background-image: url('sesh-knap.png');
@@ -50,7 +44,6 @@
                 flex: 1 1 auto;
                 margin: 1em;
                 max-height: 50vh;              
-                
             }
             .edbox {
                 flex: 1 1 auto;

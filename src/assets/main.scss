@@ -8,8 +8,6 @@
 @import './_searchSection.scss';
 
 /* fonts */
-
-
 @font-face {
   font-family: 'AvenirH';
   src: url(/src/assets/fonts/AvenirLTStd-Heavy.ttf) 
@@ -26,22 +24,15 @@
   font-family: 'BaskerRegularPara';
   src: url(/src/assets/fonts/BaskervilleMTStd-Regular.ttf) 
   format("truetype");
-  
 
   font-family: 'BaskerSemibPara';
   src: url(/src/assets/fonts/BaskervilleMTStd-Semibold.ttf) 
   format("truetype");
-  
-  
 
   font-family: 'BaskerBold';
   src: url(/src/assets/fonts/BaskervilleMTStd-Bold.ttf) 
   format("truetype"); 
-
 }
-
-
-
 
 #app {
   max-width: 100%;
@@ -49,6 +40,3 @@
   padding: 2rem;
   font-weight: normal;
 }
-
-
-

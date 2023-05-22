@@ -1,12 +1,8 @@
-
-
-/* desktop sizes*/
 $navFontSize: 0.938em;
 
 $fontsizeSmallPara:0.938em;
 $fontsizeMediumTitle: 1.375em;
 $fontsizeBigTitle: 2.500em;
-
 
 *,
 *::before,
@@ -28,7 +24,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   align-items: flex-start;
-  
 }
 
 .formtitel {
