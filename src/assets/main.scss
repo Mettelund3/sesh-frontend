@@ -12,30 +12,30 @@
 
 @font-face {
   font-family: 'AvenirH';
-  src: local('AvenirH') url(/src/assets/fonts/AvenirLTStd-Heavy.ttf) 
+  src: url(/src/assets/fonts/AvenirLTStd-Heavy.ttf) 
   format("truetype"); 
 
   font-family: 'AvenirMediumH';
-  src: local('AvenirMediumH') url(/src/assets/fonts/AvenirLTStd-Medium.ttf) 
+  src: url(/src/assets/fonts/AvenirLTStd-Medium.ttf) 
   format("truetype"); 
 
   font-family: 'AvenirSmallH';
-  src: local('AvenirSmallH') url(/src/assets/fonts/AvenirLTStd-Light.ttf) 
+  src: url(/src/assets/fonts/AvenirLTStd-Light.ttf) 
   format("truetype"); 
 
   font-family: 'BaskerRegularPara';
-  src: local('BaskerRegularPara') url(/src/assets/fonts/BaskervilleMTStd-Regular.ttf) 
+  src: url(/src/assets/fonts/BaskervilleMTStd-Regular.ttf) 
   format("truetype");
   
 
   font-family: 'BaskerSemibPara';
-  src: local('BaskerSemibPara') url(/src/assets/fonts/BaskervilleMTStd-Semibold.ttf) 
+  src: url(/src/assets/fonts/BaskervilleMTStd-Semibold.ttf) 
   format("truetype");
   
   
 
   font-family: 'BaskerBold';
-  src: local('BaskerBold') url(/src/assets/fonts/BaskervilleMTStd-Bold.ttf) 
+  src: url(/src/assets/fonts/BaskervilleMTStd-Bold.ttf) 
   format("truetype"); 
 
 }
