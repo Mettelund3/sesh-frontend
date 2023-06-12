@@ -68,7 +68,8 @@ onMounted(() => {
     <div class="sidebar">
       <h2 class="headtext_sidebar">Kommende Events</h2>
       <hr class="sidebar_line" />
-      <div v-for="event in upcomingEvents" :key="event.id" class="sidebar_event">
+      <div v-for="event in upcomingEvents" :key="event.id" class="sidebar_event" 
+      @click="$router.push(`/eventdetaljer/${event.id}`)">
         <img class="sidebar_img" :src="getFeaturedImageUrl(event)" :alt="event.title.rendered" />
         <div class="sidebar_event_details">
           <h3 class="sidebar_title">{{ event.title.rendered }}</h3>
